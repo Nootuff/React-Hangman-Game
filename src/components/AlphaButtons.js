@@ -1,5 +1,4 @@
 import React from "react"
-import "../styles/Hangman.css";
 
 class AlphaButtons extends React.Component {
     render() {
