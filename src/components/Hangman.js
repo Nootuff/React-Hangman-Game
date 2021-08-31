@@ -54,7 +54,7 @@ class Hangman extends Component {
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map(ltr => (
       <AlphaButtons //For each loop of the map render 1 AlphaButtons component & pass in the props 
-        key={Math.random()} //This isn't a prop, react just needs an id
+        key={Math.random()} //This isn't a prop, react just needs a unique id for children, could also have used ltr as this would also be unique for each child. 
         ltr={ltr} //ltr is the current letter fron the string above you are on.
         function={this.handleGuess} //Pass in the function so it can be used in the button's onclick.
         disabler={this.state.guessed.has(ltr)} //Button will be disabled if the guessed Set in state includes the current letter map has reached, if the letter is in there, it counts as true & true disables the button. The value, true or false, is passed as a prop.
